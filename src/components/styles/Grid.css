@@ -2,14 +2,12 @@ table {
   border-collapse: collapse;
   margin-left: 8px;
   margin-right: 5px;
-  table-layout: fixed;
-  position: absolute;
+  position: fixed;
   bottom: 20px;
 }
 
-#grid-row {
+.grid-row {
   white-space: nowrap;
-  display: inline-block
 }
 
 .square {
@@ -18,7 +16,6 @@ table {
   padding: 0;
   height: 25px;
   width: 25px;
-  float: left;
   margin-right: -1px;
   margin-top: -1px;
   border: 1px solid rgb(175, 216, 248)

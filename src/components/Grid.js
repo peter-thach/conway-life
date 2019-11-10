@@ -8,9 +8,9 @@ class Grid extends React.Component {
 
     // initialize 2d array to store the state of the game
     let abc = Array(27);
-    for(var i=0; i < 27; i++) {
+    for(var i=0; i < 30; i++) {
       abc[i] = Array(73);
-      for(var j=0; j < 73; j++) {
+      for(var j=0; j < 79; j++) {
         abc[i][j] = 0;
       }
     }
@@ -113,6 +113,12 @@ class Grid extends React.Component {
               {this.renderSquare(0, 70)}
               {this.renderSquare(0, 71)}
               {this.renderSquare(0, 72)}
+              {this.renderSquare(0, 73)}
+              {this.renderSquare(0, 74)}
+              {this.renderSquare(0, 75)}
+              {this.renderSquare(0, 76)}
+              {this.renderSquare(0, 77)}
+              {this.renderSquare(0, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(1, 0)}
@@ -188,6 +194,12 @@ class Grid extends React.Component {
               {this.renderSquare(1, 70)}
               {this.renderSquare(1, 71)}
               {this.renderSquare(1, 72)}
+              {this.renderSquare(1, 73)}
+              {this.renderSquare(1, 74)}
+              {this.renderSquare(1, 75)}
+              {this.renderSquare(1, 76)}
+              {this.renderSquare(1, 77)}
+              {this.renderSquare(1, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(2, 0)}
@@ -263,6 +275,12 @@ class Grid extends React.Component {
               {this.renderSquare(2, 70)}
               {this.renderSquare(2, 71)}
               {this.renderSquare(2, 72)}
+              {this.renderSquare(2, 73)}
+              {this.renderSquare(2, 74)}
+              {this.renderSquare(2, 75)}
+              {this.renderSquare(2, 76)}
+              {this.renderSquare(2, 77)}
+              {this.renderSquare(2, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(3, 0)}
@@ -338,6 +356,12 @@ class Grid extends React.Component {
               {this.renderSquare(3, 70)}
               {this.renderSquare(3, 71)}
               {this.renderSquare(3, 72)}
+              {this.renderSquare(3, 73)}
+              {this.renderSquare(3, 74)}
+              {this.renderSquare(3, 75)}
+              {this.renderSquare(3, 76)}
+              {this.renderSquare(3, 77)}
+              {this.renderSquare(3, 78)}
               </tr>
               <tr className="grid-row">
               {this.renderSquare(4, 0)}
@@ -413,6 +437,12 @@ class Grid extends React.Component {
               {this.renderSquare(4, 70)}
               {this.renderSquare(4, 71)}
               {this.renderSquare(4, 72)}
+              {this.renderSquare(4, 73)}
+              {this.renderSquare(4, 74)}
+              {this.renderSquare(4, 75)}
+              {this.renderSquare(4, 76)}
+              {this.renderSquare(4, 77)}
+              {this.renderSquare(4, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(5, 0)}
@@ -488,6 +518,12 @@ class Grid extends React.Component {
               {this.renderSquare(5, 70)}
               {this.renderSquare(5, 71)}
               {this.renderSquare(5, 72)}
+              {this.renderSquare(5, 73)}
+              {this.renderSquare(5, 74)}
+              {this.renderSquare(5, 75)}
+              {this.renderSquare(5, 76)}
+              {this.renderSquare(5, 77)}
+              {this.renderSquare(5, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(6, 0)}
@@ -563,6 +599,12 @@ class Grid extends React.Component {
               {this.renderSquare(6, 70)}
               {this.renderSquare(6, 71)}
               {this.renderSquare(6, 72)}
+              {this.renderSquare(6, 73)}
+              {this.renderSquare(6, 74)}
+              {this.renderSquare(6, 75)}
+              {this.renderSquare(6, 76)}
+              {this.renderSquare(6, 77)}
+              {this.renderSquare(6, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(7, 0)}
@@ -638,6 +680,12 @@ class Grid extends React.Component {
               {this.renderSquare(7, 70)}
               {this.renderSquare(7, 71)}
               {this.renderSquare(7, 72)}
+              {this.renderSquare(7, 73)}
+              {this.renderSquare(7, 74)}
+              {this.renderSquare(7, 75)}
+              {this.renderSquare(7, 76)}
+              {this.renderSquare(7, 77)}
+              {this.renderSquare(7, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(8, 0)}
@@ -713,6 +761,12 @@ class Grid extends React.Component {
               {this.renderSquare(8, 70)}
               {this.renderSquare(8, 71)}
               {this.renderSquare(8, 72)}
+              {this.renderSquare(8, 73)}
+              {this.renderSquare(8, 74)}
+              {this.renderSquare(8, 75)}
+              {this.renderSquare(8, 76)}
+              {this.renderSquare(8, 77)}
+              {this.renderSquare(8, 78)}
             </tr>
             <tr className="grid=row">
               {this.renderSquare(9, 0)}
@@ -788,6 +842,12 @@ class Grid extends React.Component {
               {this.renderSquare(9, 70)}
               {this.renderSquare(9, 71)}
               {this.renderSquare(9, 72)}
+              {this.renderSquare(9, 73)}
+              {this.renderSquare(9, 74)}
+              {this.renderSquare(9, 75)}
+              {this.renderSquare(9, 76)}
+              {this.renderSquare(9, 77)}
+              {this.renderSquare(9, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(10, 0)}
@@ -863,6 +923,12 @@ class Grid extends React.Component {
               {this.renderSquare(10, 70)}
               {this.renderSquare(10, 71)}
               {this.renderSquare(10, 72)}
+              {this.renderSquare(10, 73)}
+              {this.renderSquare(10, 74)}
+              {this.renderSquare(10, 75)}
+              {this.renderSquare(10, 76)}
+              {this.renderSquare(10, 77)}
+              {this.renderSquare(10, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(11, 0)}
@@ -938,6 +1004,12 @@ class Grid extends React.Component {
               {this.renderSquare(11, 70)}
               {this.renderSquare(11, 71)}
               {this.renderSquare(11, 72)}
+              {this.renderSquare(11, 73)}
+              {this.renderSquare(11, 74)}
+              {this.renderSquare(11, 75)}
+              {this.renderSquare(11, 76)}
+              {this.renderSquare(11, 77)}
+              {this.renderSquare(11, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(12, 0)}
@@ -1013,6 +1085,12 @@ class Grid extends React.Component {
               {this.renderSquare(12, 70)}
               {this.renderSquare(12, 71)}
               {this.renderSquare(12, 72)}
+              {this.renderSquare(12, 73)}
+              {this.renderSquare(12, 74)}
+              {this.renderSquare(12, 75)}
+              {this.renderSquare(12, 76)}
+              {this.renderSquare(12, 77)}
+              {this.renderSquare(12, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(13, 0)}
@@ -1088,6 +1166,12 @@ class Grid extends React.Component {
               {this.renderSquare(13, 70)}
               {this.renderSquare(13, 71)}
               {this.renderSquare(13, 72)}
+              {this.renderSquare(13, 73)}
+              {this.renderSquare(13, 74)}
+              {this.renderSquare(13, 75)}
+              {this.renderSquare(13, 76)}
+              {this.renderSquare(13, 77)}
+              {this.renderSquare(13, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(14, 0)}
@@ -1163,6 +1247,12 @@ class Grid extends React.Component {
               {this.renderSquare(14, 70)}
               {this.renderSquare(14, 71)}
               {this.renderSquare(14, 72)}
+              {this.renderSquare(14, 73)}
+              {this.renderSquare(14, 74)}
+              {this.renderSquare(14, 75)}
+              {this.renderSquare(14, 76)}
+              {this.renderSquare(14, 77)}
+              {this.renderSquare(14, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(15, 0)}
@@ -1238,6 +1328,12 @@ class Grid extends React.Component {
               {this.renderSquare(15, 70)}
               {this.renderSquare(15, 71)}
               {this.renderSquare(15, 72)}
+              {this.renderSquare(15, 73)}
+              {this.renderSquare(15, 74)}
+              {this.renderSquare(15, 75)}
+              {this.renderSquare(15, 76)}
+              {this.renderSquare(15, 77)}
+              {this.renderSquare(15, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(16, 0)}
@@ -1313,6 +1409,12 @@ class Grid extends React.Component {
               {this.renderSquare(16, 70)}
               {this.renderSquare(16, 71)}
               {this.renderSquare(16, 72)}
+              {this.renderSquare(16, 73)}
+              {this.renderSquare(16, 74)}
+              {this.renderSquare(16, 75)}
+              {this.renderSquare(16, 76)}
+              {this.renderSquare(16, 77)}
+              {this.renderSquare(16, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(17, 0)}
@@ -1388,6 +1490,12 @@ class Grid extends React.Component {
               {this.renderSquare(17, 70)}
               {this.renderSquare(17, 71)}
               {this.renderSquare(17, 72)}
+              {this.renderSquare(17, 73)}
+              {this.renderSquare(17, 74)}
+              {this.renderSquare(17, 75)}
+              {this.renderSquare(17, 76)}
+              {this.renderSquare(17, 77)}
+              {this.renderSquare(17, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(18, 0)}
@@ -1463,6 +1571,12 @@ class Grid extends React.Component {
               {this.renderSquare(18, 70)}
               {this.renderSquare(18, 71)}
               {this.renderSquare(18, 72)}
+              {this.renderSquare(18, 73)}
+              {this.renderSquare(18, 74)}
+              {this.renderSquare(18, 75)}
+              {this.renderSquare(18, 76)}
+              {this.renderSquare(18, 77)}
+              {this.renderSquare(18, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(19, 0)}
@@ -1538,6 +1652,12 @@ class Grid extends React.Component {
               {this.renderSquare(19, 70)}
               {this.renderSquare(19, 71)}
               {this.renderSquare(19, 72)}
+              {this.renderSquare(19, 73)}
+              {this.renderSquare(19, 74)}
+              {this.renderSquare(19, 75)}
+              {this.renderSquare(19, 76)}
+              {this.renderSquare(19, 77)}
+              {this.renderSquare(19, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(20, 0)}
@@ -1613,6 +1733,12 @@ class Grid extends React.Component {
               {this.renderSquare(20, 70)}
               {this.renderSquare(20, 71)}
               {this.renderSquare(20, 72)}
+              {this.renderSquare(20, 73)}
+              {this.renderSquare(20, 74)}
+              {this.renderSquare(20, 75)}
+              {this.renderSquare(20, 76)}
+              {this.renderSquare(20, 77)}
+              {this.renderSquare(20, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(21, 0)}
@@ -1688,6 +1814,12 @@ class Grid extends React.Component {
               {this.renderSquare(21, 70)}
               {this.renderSquare(21, 71)}
               {this.renderSquare(21, 72)}
+              {this.renderSquare(21, 73)}
+              {this.renderSquare(21, 74)}
+              {this.renderSquare(21, 75)}
+              {this.renderSquare(21, 76)}
+              {this.renderSquare(21, 77)}
+              {this.renderSquare(21, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(22, 0)}
@@ -1763,6 +1895,12 @@ class Grid extends React.Component {
               {this.renderSquare(22, 70)}
               {this.renderSquare(22, 71)}
               {this.renderSquare(22, 72)}
+              {this.renderSquare(23, 73)}
+              {this.renderSquare(23, 74)}
+              {this.renderSquare(23, 75)}
+              {this.renderSquare(23, 76)}
+              {this.renderSquare(23, 77)}
+              {this.renderSquare(23, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(23, 0)}
@@ -1838,6 +1976,12 @@ class Grid extends React.Component {
               {this.renderSquare(23, 70)}
               {this.renderSquare(23, 71)}
               {this.renderSquare(23, 72)}
+              {this.renderSquare(23, 73)}
+              {this.renderSquare(23, 74)}
+              {this.renderSquare(23, 75)}
+              {this.renderSquare(23, 76)}
+              {this.renderSquare(23, 77)}
+              {this.renderSquare(23, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(24, 0)}
@@ -1913,6 +2057,12 @@ class Grid extends React.Component {
               {this.renderSquare(24, 70)}
               {this.renderSquare(24, 71)}
               {this.renderSquare(24, 72)}
+              {this.renderSquare(24, 73)}
+              {this.renderSquare(24, 74)}
+              {this.renderSquare(24, 75)}
+              {this.renderSquare(24, 76)}
+              {this.renderSquare(24, 77)}
+              {this.renderSquare(24, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(25, 0)}
@@ -1988,6 +2138,12 @@ class Grid extends React.Component {
               {this.renderSquare(25, 70)}
               {this.renderSquare(25, 71)}
               {this.renderSquare(25, 72)}
+              {this.renderSquare(25, 73)}
+              {this.renderSquare(25, 74)}
+              {this.renderSquare(25, 75)}
+              {this.renderSquare(25, 76)}
+              {this.renderSquare(25, 77)}
+              {this.renderSquare(25, 78)}
             </tr>
             <tr className="grid-row">
               {this.renderSquare(26, 0)}
@@ -2063,6 +2219,255 @@ class Grid extends React.Component {
               {this.renderSquare(26, 70)}
               {this.renderSquare(26, 71)}
               {this.renderSquare(26, 72)}
+              {this.renderSquare(26, 73)}
+              {this.renderSquare(26, 74)}
+              {this.renderSquare(26, 75)}
+              {this.renderSquare(26, 76)}
+              {this.renderSquare(26, 77)}
+              {this.renderSquare(26, 78)}
+            </tr>
+            <tr>
+              {this.renderSquare(27, 0)}
+              {this.renderSquare(27, 1)}
+              {this.renderSquare(27, 2)}
+              {this.renderSquare(27, 3)}
+              {this.renderSquare(27, 4)}
+              {this.renderSquare(27, 5)}
+              {this.renderSquare(27, 6)}
+              {this.renderSquare(27, 7)}
+              {this.renderSquare(27, 8)}
+              {this.renderSquare(27, 9)}
+              {this.renderSquare(27, 10)}
+              {this.renderSquare(27, 11)}
+              {this.renderSquare(27, 12)}
+              {this.renderSquare(27, 13)}
+              {this.renderSquare(27, 14)}
+              {this.renderSquare(27, 15)}
+              {this.renderSquare(27, 16)}
+              {this.renderSquare(27, 17)}
+              {this.renderSquare(27, 18)}
+              {this.renderSquare(27, 19)}
+              {this.renderSquare(27, 20)}
+              {this.renderSquare(27, 21)}
+              {this.renderSquare(27, 22)}
+              {this.renderSquare(27, 23)}
+              {this.renderSquare(27, 24)}
+              {this.renderSquare(27, 25)}
+              {this.renderSquare(27, 26)}
+              {this.renderSquare(27, 27)}
+              {this.renderSquare(27, 28)}
+              {this.renderSquare(27, 29)}
+              {this.renderSquare(27, 30)}
+              {this.renderSquare(27, 31)}
+              {this.renderSquare(27, 32)}
+              {this.renderSquare(27, 33)}
+              {this.renderSquare(27, 34)}
+              {this.renderSquare(27, 35)}
+              {this.renderSquare(27, 36)}
+              {this.renderSquare(27, 37)}
+              {this.renderSquare(27, 38)}
+              {this.renderSquare(27, 39)}
+              {this.renderSquare(27, 40)}
+              {this.renderSquare(27, 41)}
+              {this.renderSquare(27, 42)}
+              {this.renderSquare(27, 43)}
+              {this.renderSquare(27, 44)}
+              {this.renderSquare(27, 45)}
+              {this.renderSquare(27, 46)}
+              {this.renderSquare(27, 47)}
+              {this.renderSquare(27, 48)}
+              {this.renderSquare(27, 49)}
+              {this.renderSquare(27, 50)}
+              {this.renderSquare(27, 51)}
+              {this.renderSquare(27, 52)}
+              {this.renderSquare(27, 53)}
+              {this.renderSquare(27, 54)}
+              {this.renderSquare(27, 55)}
+              {this.renderSquare(27, 56)}
+              {this.renderSquare(27, 57)}
+              {this.renderSquare(27, 58)}
+              {this.renderSquare(27, 59)}
+              {this.renderSquare(27, 60)}
+              {this.renderSquare(27, 61)}
+              {this.renderSquare(27, 62)}
+              {this.renderSquare(27, 63)}
+              {this.renderSquare(27, 64)}
+              {this.renderSquare(27, 65)}
+              {this.renderSquare(27, 66)}
+              {this.renderSquare(27, 67)}
+              {this.renderSquare(27, 68)}
+              {this.renderSquare(27, 69)}
+              {this.renderSquare(27, 70)}
+              {this.renderSquare(27, 71)}
+              {this.renderSquare(27, 72)}
+              {this.renderSquare(27, 73)}
+              {this.renderSquare(27, 74)}
+              {this.renderSquare(27, 75)}
+              {this.renderSquare(27, 76)}
+              {this.renderSquare(27, 77)}
+              {this.renderSquare(27, 78)}
+            </tr>
+            <tr>
+              {this.renderSquare(28, 0)}
+              {this.renderSquare(28, 1)}
+              {this.renderSquare(28, 2)}
+              {this.renderSquare(28, 3)}
+              {this.renderSquare(28, 4)}
+              {this.renderSquare(28, 5)}
+              {this.renderSquare(28, 6)}
+              {this.renderSquare(28, 7)}
+              {this.renderSquare(28, 8)}
+              {this.renderSquare(28, 9)}
+              {this.renderSquare(28, 10)}
+              {this.renderSquare(28, 11)}
+              {this.renderSquare(28, 12)}
+              {this.renderSquare(28, 13)}
+              {this.renderSquare(28, 14)}
+              {this.renderSquare(28, 15)}
+              {this.renderSquare(28, 16)}
+              {this.renderSquare(28, 17)}
+              {this.renderSquare(28, 18)}
+              {this.renderSquare(28, 19)}
+              {this.renderSquare(28, 20)}
+              {this.renderSquare(28, 21)}
+              {this.renderSquare(28, 22)}
+              {this.renderSquare(28, 23)}
+              {this.renderSquare(28, 24)}
+              {this.renderSquare(28, 25)}
+              {this.renderSquare(28, 26)}
+              {this.renderSquare(28, 27)}
+              {this.renderSquare(28, 28)}
+              {this.renderSquare(28, 29)}
+              {this.renderSquare(28, 30)}
+              {this.renderSquare(28, 31)}
+              {this.renderSquare(28, 32)}
+              {this.renderSquare(28, 33)}
+              {this.renderSquare(28, 34)}
+              {this.renderSquare(28, 35)}
+              {this.renderSquare(28, 36)}
+              {this.renderSquare(28, 37)}
+              {this.renderSquare(28, 38)}
+              {this.renderSquare(28, 39)}
+              {this.renderSquare(28, 40)}
+              {this.renderSquare(28, 41)}
+              {this.renderSquare(28, 42)}
+              {this.renderSquare(28, 43)}
+              {this.renderSquare(28, 44)}
+              {this.renderSquare(28, 45)}
+              {this.renderSquare(28, 46)}
+              {this.renderSquare(28, 47)}
+              {this.renderSquare(28, 48)}
+              {this.renderSquare(28, 49)}
+              {this.renderSquare(28, 50)}
+              {this.renderSquare(28, 51)}
+              {this.renderSquare(28, 52)}
+              {this.renderSquare(28, 53)}
+              {this.renderSquare(28, 54)}
+              {this.renderSquare(28, 55)}
+              {this.renderSquare(28, 56)}
+              {this.renderSquare(28, 57)}
+              {this.renderSquare(28, 58)}
+              {this.renderSquare(28, 59)}
+              {this.renderSquare(28, 60)}
+              {this.renderSquare(28, 61)}
+              {this.renderSquare(28, 62)}
+              {this.renderSquare(28, 63)}
+              {this.renderSquare(28, 64)}
+              {this.renderSquare(28, 65)}
+              {this.renderSquare(28, 66)}
+              {this.renderSquare(28, 67)}
+              {this.renderSquare(28, 68)}
+              {this.renderSquare(28, 69)}
+              {this.renderSquare(28, 70)}
+              {this.renderSquare(28, 71)}
+              {this.renderSquare(28, 72)}
+              {this.renderSquare(28, 73)}
+              {this.renderSquare(28, 74)}
+              {this.renderSquare(28, 75)}
+              {this.renderSquare(28, 76)}
+              {this.renderSquare(28, 77)}
+              {this.renderSquare(28, 78)}
+            </tr>
+            <tr>
+              {this.renderSquare(29, 0)}
+              {this.renderSquare(29, 1)}
+              {this.renderSquare(29, 2)}
+              {this.renderSquare(29, 3)}
+              {this.renderSquare(29, 4)}
+              {this.renderSquare(29, 5)}
+              {this.renderSquare(29, 6)}
+              {this.renderSquare(29, 7)}
+              {this.renderSquare(29, 8)}
+              {this.renderSquare(29, 9)}
+              {this.renderSquare(29, 10)}
+              {this.renderSquare(29, 11)}
+              {this.renderSquare(29, 12)}
+              {this.renderSquare(29, 13)}
+              {this.renderSquare(29, 14)}
+              {this.renderSquare(29, 15)}
+              {this.renderSquare(29, 16)}
+              {this.renderSquare(29, 17)}
+              {this.renderSquare(29, 18)}
+              {this.renderSquare(29, 19)}
+              {this.renderSquare(29, 20)}
+              {this.renderSquare(29, 21)}
+              {this.renderSquare(29, 22)}
+              {this.renderSquare(29, 23)}
+              {this.renderSquare(29, 24)}
+              {this.renderSquare(29, 25)}
+              {this.renderSquare(29, 26)}
+              {this.renderSquare(29, 27)}
+              {this.renderSquare(29, 28)}
+              {this.renderSquare(29, 29)}
+              {this.renderSquare(29, 30)}
+              {this.renderSquare(29, 31)}
+              {this.renderSquare(29, 32)}
+              {this.renderSquare(29, 33)}
+              {this.renderSquare(29, 34)}
+              {this.renderSquare(29, 35)}
+              {this.renderSquare(29, 36)}
+              {this.renderSquare(29, 37)}
+              {this.renderSquare(29, 38)}
+              {this.renderSquare(29, 39)}
+              {this.renderSquare(29, 40)}
+              {this.renderSquare(29, 41)}
+              {this.renderSquare(29, 42)}
+              {this.renderSquare(29, 43)}
+              {this.renderSquare(29, 44)}
+              {this.renderSquare(29, 45)}
+              {this.renderSquare(29, 46)}
+              {this.renderSquare(29, 47)}
+              {this.renderSquare(29, 48)}
+              {this.renderSquare(29, 49)}
+              {this.renderSquare(29, 50)}
+              {this.renderSquare(29, 51)}
+              {this.renderSquare(29, 52)}
+              {this.renderSquare(29, 53)}
+              {this.renderSquare(29, 54)}
+              {this.renderSquare(29, 55)}
+              {this.renderSquare(29, 56)}
+              {this.renderSquare(29, 57)}
+              {this.renderSquare(29, 58)}
+              {this.renderSquare(29, 59)}
+              {this.renderSquare(29, 60)}
+              {this.renderSquare(29, 61)}
+              {this.renderSquare(29, 62)}
+              {this.renderSquare(29, 63)}
+              {this.renderSquare(29, 64)}
+              {this.renderSquare(29, 65)}
+              {this.renderSquare(29, 66)}
+              {this.renderSquare(29, 67)}
+              {this.renderSquare(29, 68)}
+              {this.renderSquare(29, 69)}
+              {this.renderSquare(29, 70)}
+              {this.renderSquare(29, 71)}
+              {this.renderSquare(29, 72)}
+              {this.renderSquare(29, 73)}
+              {this.renderSquare(29, 74)}
+              {this.renderSquare(29, 75)}
+              {this.renderSquare(29, 76)}
+              {this.renderSquare(29, 77)}
+              {this.renderSquare(29, 78)}
             </tr>
           </tbody>
         </table>
