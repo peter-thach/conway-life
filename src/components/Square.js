@@ -1,31 +1,21 @@
 import React from 'react';
 
-class Square extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     backgroundColor: 'white',
-  //     value: 0,
-  //   };
-  // }
-
-  render() {
-    const styles = {
-      containerStyle: {
-        backgroundColor: this.state.value === 0 ? 'white' : 'lawngreen'
-      }
-    };
-    const {containerStyle} = styles;
-    return(
-      <td
-        style={containerStyle}
-        className="square"
-        // alternates between white and green on click 
-        onClick={() => { this.props.onClick() }}
-      >
-      </td>
-    )
-  }
+function Square(props) {
+  // Square changes color depending on state of squares array
+  const styles = {
+    containerStyle: {
+      backgroundColor: props.value === 0 ? 'white' : 'lawngreen'
+    }
+  };
+  const {containerStyle} = styles;
+  return (
+    <td
+      className="square"
+      style={containerStyle}
+      onClick={props.onClick}
+    >
+    </td>
+  )
 }
 
 export default Square;
