@@ -1,16 +1,18 @@
 import React from 'react';
 
 class Square extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      backgroundColor: 'white',
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     backgroundColor: 'white',
+  //     value: 0,
+  //   };
+  // }
+
   render() {
     const styles = {
       containerStyle: {
-        backgroundColor: this.state.backgroundColor,
+        backgroundColor: this.state.value === 0 ? 'white' : 'lawngreen'
       }
     };
     const {containerStyle} = styles;
@@ -19,12 +21,8 @@ class Square extends React.Component {
         style={containerStyle}
         className="square"
         // alternates between white and green on click 
-        onClick={() => { this.state.backgroundColor === "lawngreen" ?
-          this.setState({backgroundColor: 'white'}) :
-          this.setState({backgroundColor: 'lawngreen'})}
-        }
+        onClick={() => { this.props.onClick() }}
       >
-        {this.state.value}
       </td>
     )
   }

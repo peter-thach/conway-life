@@ -1,5 +1,4 @@
 import React from 'react';
-import Square from './components/Square';
 import Grid from './components/Grid';
 
 class App extends React.Component {
