@@ -19,6 +19,7 @@ class Grid extends React.Component {
     }
   }
 
+  // change value at squares[x][y]
   handleClick(x, y) {
     const squares = this.state.squares.slice();
     squares[x][y] = squares[x][y] === 0 ? 1 : 0;
@@ -27,6 +28,7 @@ class Grid extends React.Component {
 
   renderSquare(x, y) {
     return <Square 
+              // set an click handler to change value of grid state on click, link Square's value to that state
               onClick={() => this.handleClick(x, y)}
               value={this.state.squares[x][y]} 
           />
