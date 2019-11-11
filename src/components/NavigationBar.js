@@ -53,13 +53,13 @@ class NavigationBar extends Component {
             <Button variant="success">Start Simulation!</Button>
 
             <Nav.Item>
-              <Nav.Link href="#">
+              <Nav.Link onClick={() => this.props.onClick('randomize')}>
                 Randomize Grid
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link href="#">
+              <Nav.Link onClick={() => this.props.onClick('clear')}>
                 Clear Grid
               </Nav.Link>
             </Nav.Item>
