@@ -1,5 +1,6 @@
 import React from 'react';
-import Grid from './components/Grid';
+import Game from './components/Game';
+import Legend from './components/Legend';
 import NavigationBar from './components/NavigationBar';
 
 class App extends React.Component {
@@ -8,7 +9,8 @@ class App extends React.Component {
     return (
       <div>
         <NavigationBar />
-        <Grid />
+        <Legend />
+        <Game />
       </div>
     );
   }

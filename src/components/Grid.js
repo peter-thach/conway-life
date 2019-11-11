@@ -3,35 +3,14 @@ import Square from './Square';
 import './styles/Grid.css';
 
 class Grid extends React.Component { 
-  constructor(props) {
-    super(props);
-
-    // initialize 2d array to store the state of the game
-    let abc = Array(27);
-    for(var i=0; i < 30; i++) {
-      abc[i] = Array(73);
-      for(var j=0; j < 79; j++) {
-        abc[i][j] = 0;
-      }
-    }
-    this.state = {
-      squares: abc
-    }
-  }
-
-  // change value at squares[x][y]
-  handleClick(x, y) {
-    const squares = this.state.squares.slice();
-    squares[x][y] = squares[x][y] === 0 ? 1 : 0;
-    this.setState({squares: squares});
-  }
-
   renderSquare(x, y) {
-    return <Square 
-              // set an click handler to change value of grid state on click, link Square's value to that state
-              onClick={() => this.handleClick(x, y)}
-              value={this.state.squares[x][y]} 
-          />
+    return (
+      <Square 
+        // set an click handler to change value of grid state on click, link Square's value to that state
+        onClick={() => this.props.onClick(x, y)}
+        value={this.props.squares[x][y]}
+      />
+    );
   }
 
   render() {
