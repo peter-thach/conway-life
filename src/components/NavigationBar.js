@@ -50,7 +50,9 @@ class NavigationBar extends Component {
               </NavDropdown>
             </NavDropdown>
             
-            <Button variant="success">Start Simulation!</Button>
+            <Button variant={this.props.variant} onClick={() => this.props.onClick('start')}>
+              {this.props.start}  
+            </Button>
 
             <Nav.Item>
               <Nav.Link onClick={() => this.props.onClick('randomize')}>
