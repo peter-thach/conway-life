@@ -58,8 +58,8 @@ class Game extends React.Component {
         this.setState({
           start: 'Stop Simulation',
           variant: 'danger',
-        })
-        this.startGame();
+        },
+        () => {this.startGame()})
       }
       else {
         this.setState({
@@ -72,9 +72,9 @@ class Game extends React.Component {
     
   }
   
-  startGame() {
+  startGame = () => {
+    const self = this;
     function loop() {
-      if(this.state.variant === 'danger') {
         let neighbors = Array(30);
         for(var i = 0; i < neighbors.length; i++) {
           neighbors[i] = Array(79);
@@ -87,34 +87,34 @@ class Game extends React.Component {
           for(var j = 0; j < 79; j++) {
             // do the corner first
             if(i === 0 && j === 0) {
-              neighbors[i][j] = this.state.squares[i+1][j] + this.state.squares[i][j+1] + this.state.squares[i+1][j+1];
+              neighbors[i][j] = self.state.squares[i+1][j] + self.state.squares[i][j+1] + self.state.squares[i+1][j+1];
             }
             else if(i === 0 && j === neighbors[0].length - 1) {
-              neighbors[i][j] = this.state.squares[i][j-1] + this.state.squares[i+1][j-1] + this.state.squares[i+1][j];
+              neighbors[i][j] = self.state.squares[i][j-1] + self.state.squares[i+1][j-1] + self.state.squares[i+1][j];
             }
             else if(i === neighbors.length - 1 && j === 0) {
-              neighbors[i][j] = this.state.squares[i-1][j] + this.state.squares[i-1][j+1] + this.state.squares[i][j+1];
+              neighbors[i][j] = self.state.squares[i-1][j] + self.state.squares[i-1][j+1] + self.state.squares[i][j+1];
             }
             else if(i === neighbors.length - 1 && j === neighbors[0].length - 1) {
-              neighbors[i][j] = this.state.squares[i-1][j] + this.state.squares[i-1][j-1] + this.state.squares[i][j-1];
+              neighbors[i][j] = self.state.squares[i-1][j] + self.state.squares[i-1][j-1] + self.state.squares[i][j-1];
             }
             // now the edges
             else if(i === 0) {
-              neighbors[i][j] = this.state.squares[i][j-1] + this.state.squares[i+1][j-1] + this.state.squares[i+1][j] + this.state.squares[i+1][j+1] + this.state.squares[i][j+1];
+              neighbors[i][j] = self.state.squares[i][j-1] + self.state.squares[i+1][j-1] + self.state.squares[i+1][j] + self.state.squares[i+1][j+1] + self.state.squares[i][j+1];
             }
             else if(i === neighbors.length - 1) {
-              neighbors[i][j] = this.state.squares[i][j-1] + this.state.squares[i-1][j-1] + this.state.squares[i-1][j] + this.state.squares[i-1][j+1] + this.state.squares[i][j+1];
+              neighbors[i][j] = self.state.squares[i][j-1] + self.state.squares[i-1][j-1] + self.state.squares[i-1][j] + self.state.squares[i-1][j+1] + self.state.squares[i][j+1];
             }
             else if(j === 0) {
-              neighbors[i][j] = this.state.squares[i-1][j] + this.state.squares[i-1][j+1] + this.state.squares[i][j+1] + this.state.squares[i+1][j+1] + this.state.squares[i+1][j];
+              neighbors[i][j] = self.state.squares[i-1][j] + self.state.squares[i-1][j+1] + self.state.squares[i][j+1] + self.state.squares[i+1][j+1] + self.state.squares[i+1][j];
             }
             else if(j === neighbors[0].length - 1) {
-              neighbors[i][j] =  this.state.squares[i-1][j] + this.state.squares[i-1][j-1] + this.state.squares[i][j-1] + this.state.squares[i+1][j-1] + this.state.squares[i+1][j];
+              neighbors[i][j] =  self.state.squares[i-1][j] + self.state.squares[i-1][j-1] + self.state.squares[i][j-1] + self.state.squares[i+1][j-1] + self.state.squares[i+1][j];
             }
             // general case
             else {
-              neighbors[i][j] = this.state.squares[i-1][j-1] + this.state.squares[i-1][j] + this.state.squares[i-1][j+1] + this.state.squares[i][j+1] + 
-                                this.state.squares[i+1][j+1] + this.state.squares[i+1][j] + this.state.squares[i+1][j-1] + this.state.squares[i][j-1];
+              neighbors[i][j] = self.state.squares[i-1][j-1] + self.state.squares[i-1][j] + self.state.squares[i-1][j+1] + self.state.squares[i][j+1] + 
+                                self.state.squares[i+1][j+1] + self.state.squares[i+1][j] + self.state.squares[i+1][j-1] + self.state.squares[i][j-1];
             }
           }
         }
@@ -123,7 +123,7 @@ class Game extends React.Component {
         for(var i = 0; i < newArr.length; i++) {
           newArr[i] = Array(79);
           for(var j = 0; j < newArr[i].length; j++) {
-            if(this.state.squares[i][j] == 1) {
+            if(self.state.squares[i][j] == 1) {
               if(neighbors[i][j] < 2) {
                 newArr[i][j] = 0;
               }
@@ -144,10 +144,11 @@ class Game extends React.Component {
             }
           }
         }
-        this.setState({squares: newArr});
-      }
+        self.setState({squares: newArr});
 
-      if(this.state.variant === 'danger') setTimeout(loop, 0);
+      if(self.state.variant === 'danger') {
+        setTimeout(loop(), 10000);
+      }
     }
 
     loop();
