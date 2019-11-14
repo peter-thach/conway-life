@@ -19,6 +19,8 @@ class Game extends React.Component {
       squares: abc,
       start: 'Start Simulation!',
       variant: 'success',
+      speed: 'Normal',
+      delay: 750,
     }
   }
 
@@ -40,9 +42,9 @@ class Game extends React.Component {
       }
       this.setState({sqares: temp});
     }
-    // pressing the randomize button makes it so that each cell has a 1/10 probability to be alive, 1/10 so that there isn't a lot of clutter
+    // pressing the randomize button makes it so that each cell has a 1/8 probability to be alive; 1/8 so that there isn't a lot of clutter
     if(command === 'randomize') {
-      const values = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1];
+      const values = [0, 0, 0, 0, 0, 0, 0, 1];
       const temp = this.state.squares;
       for(var i=0; i < 30; i++) {
         for(var j=0; j < 79; j++) {
@@ -69,6 +71,16 @@ class Game extends React.Component {
       }
     }
 
+    // setting the speed
+    if(command ===  'Slow') {
+      this.setState({speed: 'Slow', delay: 1500});
+    }
+    if(command  === 'Normal') {
+      this.setState({speed: 'Normal', delay: 750});
+    }
+    if(command === 'Fast') {
+      this.setState({speed: 'Fast', delay: 100});
+    }
     
   }
   
@@ -147,11 +159,11 @@ class Game extends React.Component {
           this.setState({squares: newArr});
 
         if(this.state.variant === 'danger') {
-          setTimeout(loop, 2000);
+          setTimeout(loop, this.state.delay);
         }
       }
     }
-    setTimeout(loop, 2000);
+    setTimeout(loop, this.state.delay);
   }
 
   render() {
@@ -161,6 +173,7 @@ class Game extends React.Component {
           onClick={(command) => this.handleClickNav(command)}
           start={this.state.start}
           variant={this.state.variant}
+          speed={this.state.speed}
         />
         <Legend />
         <div className="game">

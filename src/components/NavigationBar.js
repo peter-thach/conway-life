@@ -66,10 +66,10 @@ class NavigationBar extends Component {
               </Nav.Link>
             </Nav.Item>
 
-            <NavDropdown title="Speed">
-              <NavDropdown.Item>Slow</NavDropdown.Item>
-              <NavDropdown.Item>Average</NavDropdown.Item>
-              <NavDropdown.Item>Fast</NavDropdown.Item>
+            <NavDropdown title={"Speed: " + this.props.speed}>
+              <NavDropdown.Item onClick={() => this.props.onClick('Slow')}>Slow</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => this.props.onClick('Normal')}>Normal</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => this.props.onClick('Fast')}>Fast</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
