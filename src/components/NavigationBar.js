@@ -11,7 +11,7 @@ class NavigationBar extends Component {
           <Nav>
             <NavDropdown title="Patterns">
               <NavDropdown title="Triominos" drop="right">
-                <NavDropdown.Item>1</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => this.props.onClick('tri1')}>1</NavDropdown.Item>
                 <NavDropdown.Item>2</NavDropdown.Item>
                 <NavDropdown.Item>3</NavDropdown.Item>
                 <NavDropdown.Item>4</NavDropdown.Item>

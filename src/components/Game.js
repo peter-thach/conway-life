@@ -21,6 +21,8 @@ class Game extends React.Component {
       variant: 'success',
       speed: 'Normal',
       delay: 750,
+      pattern: '',
+      patterngrid: null,
     }
   }
 
@@ -33,7 +35,24 @@ class Game extends React.Component {
 
     const squares = this.state.squares.slice();
     squares[x][y] = squares[x][y] === 0 ? 1 : 0;
-    this.setState({squares: squares});
+    this.setState({squares: squares, pattern: '', patterngrid: null});
+  }
+
+  onMouseOver(x, y) {
+    const trigger = () => {
+      if(this.state.pattern === 'tri1') {
+        let copy = this.state.squares.slice();
+        copy[x][y] = 2;
+        if(x > 0 && y < copy[0].length - 1) {
+          copy[x-1][y+1] = 2;
+        }
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+    }
+    trigger();
   }
 
   handleClickNav(command) {
@@ -42,14 +61,15 @@ class Game extends React.Component {
       if(this.state.start == 'Stop Simulation') {
         return;
       }
+
       // clears the grid of alive cells
-      const temp = this.state.squares;
+      const temp = this.state.squares.slice();
       for(var i=0; i < 30; i++) {
         for(var j=0; j < 79; j++) {
           temp[i][j] = 0;
         }
       }
-      this.setState({sqares: temp});
+      this.setState({squares: temp});
     }
     // pressing the randomize button makes it so that each cell has a 1/8 probability to be alive; 1/8 so that there isn't a lot of clutter
     if(command === 'randomize') {
@@ -57,8 +77,9 @@ class Game extends React.Component {
       if(this.state.start == 'Stop Simulation') {
         return;
       }
+
       const values = [0, 0, 0, 0, 0, 0, 0, 1];
-      const temp = this.state.squares;
+      const temp = this.state.squares.slice();
       for(var i=0; i < 30; i++) {
         for(var j=0; j < 79; j++) {
           temp[i][j] = values[Math.floor(Math.random() * 10)]
@@ -93,6 +114,11 @@ class Game extends React.Component {
     }
     if(command === 'Fast') {
       this.setState({speed: 'Fast', delay: 100});
+    }
+
+    // setting the pattern
+    if(command === 'tri1') {
+      this.setState({pattern: 'tri1'});
     }
     
   }
@@ -193,7 +219,9 @@ class Game extends React.Component {
           <div className="game-grid">
             <Grid
               squares={this.state.squares}
+              patterngrid={this.state.patterngrid}
               onClick={(x, y) => this.handleClick(x, y)}
+              onMouseOver={(x, y) => this.onMouseOver(x, y)}
             />
           </div>
         </div>

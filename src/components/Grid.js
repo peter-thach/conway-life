@@ -6,9 +6,10 @@ class Grid extends React.Component {
   renderSquare(x, y) {
     return (
       <Square 
-        // set an click handler to change value of grid state on click, link Square's value to that state
+        // set a click handler to change value of grid state on click, link Square's value to that state
         onClick={() => this.props.onClick(x, y)}
-        value={this.props.squares[x][y]}
+        value={this.props.patterngrid ? (this.props.patterngrid[x][y] === 0 ? this.props.squares[x][y] : 2) : this.props.squares[x][y]}
+        onMouseOver={() => this.props.onMouseOver(x, y)}
       />
     );
   }
