@@ -33,26 +33,39 @@ class Game extends React.Component {
       return;
     }
 
-    const squares = this.state.squares.slice();
-    squares[x][y] = squares[x][y] === 0 ? 1 : 0;
-    this.setState({squares: squares, pattern: '', patterngrid: null});
+    // clicking to place a pattern
+    // go through patterngrid and set all 2s to 1s, use that as the actual grid, set patterngrid to null
+    if(this.state.patterngrid) {
+      for(var i = 0; i < this.state.patterngrid.length; i++) {
+        for(var j = 0; j < this.state.patterngrid[i].length; j++) {
+          if(this.state.patterngrid[i][j] === 2) {
+            this.state.patterngrid[i][j] = 1;
+          }
+        }
+      }
+      let temp1 = JSON.parse(JSON.stringify(this.state.patterngrid));
+      this.setState({squares: temp1, pattern: '', patterngrid: null});
+    }
+    else {
+      const squares = this.state.squares.slice();
+      squares[x][y] = squares[x][y] === 0 ? 1 : 0;
+      this.setState({squares: squares});
+    }
   }
 
   onMouseOver(x, y) {
-    const trigger = () => {
-      if(this.state.pattern === 'tri1') {
-        let copy = this.state.squares.slice();
-        copy[x][y] = 2;
-        if(x > 0 && y < copy[0].length - 1) {
-          copy[x-1][y+1] = 2;
-        }
-        if(x < copy.length - 1) {
-          copy[x+1][y] = 2;
-        }
-        this.setState({patterngrid: copy});
-      }
+    if(this.state.pattern === 'tri1') {
+      // JSON.parse allows deep copy of multidimensional array
+      let copy = JSON.parse(JSON.stringify(this.state.squares));
+       copy[x][y] = 2;
+       if(x > 0 && y < copy[0].length - 1) {
+         copy[x-1][y+1] = 2;
+       }
+       if(x < copy.length - 1) {
+         copy[x+1][y] = 2;
+       }
+       this.setState({patterngrid: copy});
     }
-    trigger();
   }
 
   handleClickNav(command) {
@@ -94,6 +107,8 @@ class Game extends React.Component {
         this.setState({
           start: 'Stop Simulation',
           variant: 'danger',
+          pattern: '',
+          patterngrid: null,
         },
         () => {this.startGame()})
       }
@@ -117,7 +132,7 @@ class Game extends React.Component {
     }
 
     // setting the pattern
-    if(command === 'tri1') {
+    if(command === 'tri1' && this.state.start === 'Start Simulation!') {
       this.setState({pattern: 'tri1'});
     }
     
