@@ -26,6 +26,11 @@ class Game extends React.Component {
 
   // change value at squares[x][y]
   handleClick(x, y) {
+    // disable the cells from being altered during the simulation
+    if(this.state.start == 'Stop Simulation') { 
+      return;
+    }
+
     const squares = this.state.squares.slice();
     squares[x][y] = squares[x][y] === 0 ? 1 : 0;
     this.setState({squares: squares});
@@ -33,6 +38,10 @@ class Game extends React.Component {
 
   handleClickNav(command) {
     if(command === 'clear') {
+      // prevent the board from being cleared during the simulation
+      if(this.state.start == 'Stop Simulation') {
+        return;
+      }
       // clears the grid of alive cells
       const temp = this.state.squares;
       for(var i=0; i < 30; i++) {
@@ -44,6 +53,10 @@ class Game extends React.Component {
     }
     // pressing the randomize button makes it so that each cell has a 1/8 probability to be alive; 1/8 so that there isn't a lot of clutter
     if(command === 'randomize') {
+      // prevent the board from being randomized during the simulation
+      if(this.state.start == 'Stop Simulation') {
+        return;
+      }
       const values = [0, 0, 0, 0, 0, 0, 0, 1];
       const temp = this.state.squares;
       for(var i=0; i < 30; i++) {
