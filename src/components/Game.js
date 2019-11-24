@@ -521,6 +521,227 @@ class Game extends React.Component {
         }
         this.setState({patterngrid: copy});
       }
+      else if(this.state.pattern == 'glider') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y > 0) {
+          copy[x][y-1] = 2;
+        }
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 1) {
+          copy[x-1][y+1] = 2
+        }
+        if(x > 1) {
+          copy[x-2][y] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern == 'lwss') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 1) {
+          copy[x-1][y+1] = 2;
+        }
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 1) {
+          copy[x+1][y+1] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 2) {
+          copy[x-1][y+2] = 2;
+        }
+        if(y < copy[0].length - 2) {
+          copy[x][y+2] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 2) {
+          copy[x+2][y+2] = 2;
+        }
+        if(y < copy[0].length - 3) {
+          copy[x][y+3] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 3) {
+          copy[x+1][y+3] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 3) {
+          copy[x+2][y+3] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 4) {
+          copy[x+1][y+4] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern == 'mwss') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 1) {
+          copy[x-1][y+1] = 2;
+        }
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 1) {
+          copy[x+1][y+1] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 2) {
+          copy[x-1][y+2] = 2;
+        }
+        if(y < copy[0].length - 2) {
+          copy[x][y+2] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 2) {
+          copy[x+1][y+2] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 3) {
+          copy[x-1][y+3] = 2;
+        }
+        if(y < copy[0].length - 3) {
+          copy[x][y+3] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 3) {
+          copy[x+2][y+3] = 2;
+        }
+        if(y < copy[0].length - 4) {
+          copy[x][y+4] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 4) {
+          copy[x+1][y+4] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 4) {
+          copy[x+2][y+4] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 5) {
+          copy[x+1][y+5] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern == 'hwss') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 1) {
+          copy[x-1][y+1] = 2;
+        }
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 1) {
+          copy[x+1][y+1] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 2) {
+          copy[x-1][y+2] = 2;
+        }
+        if(y < copy[0].length - 2) {
+          copy[x][y+2] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 2) {
+          copy[x+1][y+2] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 3) {
+          copy[x-1][y+3] = 2;
+        }
+        if(y < copy[0].length - 3) {
+          copy[x][y+3] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 3) {
+          copy[x+1][y+3] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 4) {
+          copy[x-1][y+4] = 2;
+        }
+        if(y < copy[0].length - 4) {
+          copy[x][y+4] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 4) {
+          copy[x+2][y+4] = 2;
+        }
+        if(y < copy[0].length - 5) {
+          copy[x][y+5] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 5) {
+          copy[x+1][y+5] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 5) {
+          copy[x+2][y+5] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 6) {
+          copy[x+1][y+6] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern == 'rpent') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(x > 0 && y < copy[0].length - 1) {
+          copy[x-1][y+1] = 2;
+        }
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 1) {
+          copy[x+1][y+1] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 2) {
+          copy[x-1][y+2] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern == 'diehard') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 1) {
+          copy[x+1][y+1] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 6) {
+          copy[x-1][y+6] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 5) {
+          copy[x+1][y+5] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 6) {
+          copy[x+1][y+6] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 7) {
+          copy[x+1][y+7] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern == 'acorn') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2
+        if(x > 1 && y < copy[0].length - 1) {
+          copy[x-2][y+1] = 2;
+        }
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 3) {
+          copy[x-1][y+3] = 2;
+        }
+        if(y < copy[0].length - 4) {
+          copy[x][y+4] = 2;
+        }
+        if(y < copy[0].length - 5) {
+          copy[x][y+5] = 2;
+        }
+        if(y < copy[0].length - 6) {
+          copy[x][y+6] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
     }
   }
 
@@ -645,6 +866,27 @@ class Game extends React.Component {
       }
       else if(command === 'penta-decathlon' && this.state.start === 'Start Simulation!') {
         this.setState({pattern: 'penta-decathlon'});
+      }
+      else if(command === 'glider' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'glider'});
+      }
+      else if(command === 'lwss' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'lwss'});
+      }
+      else if(command === 'mwss' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'mwss'});
+      }
+      else if(command === 'hwss' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'hwss'});
+      }
+      else if(command === 'rpent' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'rpent'});
+      }
+      else if(command === 'diehard' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'diehard'});
+      }
+      else if(command === 'acorn' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'acorn'});
       }
     }
     
