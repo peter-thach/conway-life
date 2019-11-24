@@ -68,7 +68,7 @@ class Game extends React.Component {
         }
         this.setState({patterngrid: copy});
       }
-      else if(this.state.pattern === 'tri2') {
+      else if(this.state.pattern === 'tri2' || this.state.pattern === 'blinker') {
         let copy = JSON.parse(JSON.stringify(this.state.squares));
         copy[x][y] = 2;
         if(x > 0) {
@@ -154,6 +154,370 @@ class Game extends React.Component {
         }
         if(y > 0) {
           copy[x][y-1] = 2
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'square') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 1) {
+          copy[x+1][y+1] = 2
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'boat') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 2) {
+          copy[x+1][y+2] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 1) {
+          copy[x+2][y+1] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'loaf') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 2) {
+          copy[x+1][y+2] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 1) {
+          copy[x+2][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y > 0) {
+          copy[x+1][y-1] = 2;
+        }
+        if(x < copy.length - 2 && y > 0) {
+          copy[x+2][y-1] = 2;
+        }
+        if(x < copy.length - 3) {
+          copy[x+3][y] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'ship') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 2) {
+          copy[x+1][y+2] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 1) {
+          copy[x+2][y+1] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 2) {
+          copy[x+2][y+2] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'beehive') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 2) {
+          copy[x+1][y+2] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 1) {
+          copy[x+2][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y > 0) {
+          copy[x+1][y-1] = 2;
+        }
+        if(x < copy.length - 2) {
+          copy[x+2][y] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'tub') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(x > 0 && y < copy[0].length - 1) {
+          copy[x-1][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 1) {
+          copy[x+1][y+1] = 2;
+        }
+        if(y < copy[0].length - 2) {
+          copy[x][y+2] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'toad') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(y < copy[0].length - 2) {
+          copy[x][y+2] = 2;
+        }
+        if(x < copy.length - 1 && y > 0) {
+          copy[x+1][y-1] = 2;
+        }
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 1) {
+          copy[x+1][y+1] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'beacon') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y > 0) {
+          copy[x][y-1] = 2;
+        }
+        if(x > 0) {
+          copy[x-1][y] = 2;
+        }
+        if(x > 0 && y > 0) {
+          copy[x-1][y-1] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 1) {
+          copy[x+1][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 2) {
+          copy[x+1][y+2] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 1) {
+          copy[x+2][y+1] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 2) {
+          copy[x+2][y+2] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'pulsar') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        if(x > 0 && y > 1) {
+          copy[x-1][y-2] = 2;
+        }
+        if(x > 0 && y > 2) {
+          copy[x-1][y-3] = 2;
+        }
+        if(x > 0 && y > 3) {
+          copy[x-1][y-4] = 2;
+        }
+        if(x > 1 && y > 0) {
+          copy[x-2][y-1] = 2;
+        }
+        if(x > 2 && y > 0) {
+          copy[x-3][y-1] = 2;
+        }
+        if(x > 3 && y > 0) {
+          copy[x-4][y-1] = 2;
+        }
+        if(x > 1 && y > 5) {
+          copy[x-2][y-6] = 2;
+        }
+        if(x > 2 && y > 5) {
+          copy[x-3][y-6] = 2;
+        }
+        if(x > 3 && y > 5) {
+          copy[x-4][y-6] = 2;
+        }
+        if(x > 5 && y > 1) {
+          copy[x-6][y-2] = 2;
+        }
+        if(x > 5 && y > 2) {
+          copy[x-6][y-3] = 2;
+        }
+        if(x > 5 && y > 3) {
+          copy[x-6][y-4] = 2;
+        }
+
+        if(x < copy.length - 1 && y > 1) {
+          copy[x+1][y-2] = 2;
+        }
+        if(x < copy.length - 1 && y > 2) {
+          copy[x+1][y-3] = 2;
+        }
+        if(x < copy.length - 1 && y > 3) {
+          copy[x+1][y-4] = 2;
+        }
+        if(x < copy.length - 2 && y > 0) {
+          copy[x+2][y-1] = 2;
+        }
+        if(x < copy.length - 3 && y > 0) {
+          copy[x+3][y-1] = 2;
+        }
+        if(x < copy.length - 4 && y > 0) {
+          copy[x+4][y-1] = 2;
+        }
+        if(x < copy.length - 2 && y > 5) {
+          copy[x+2][y-6] = 2;
+        }
+        if(x < copy.length - 3 && y > 5) {
+          copy[x+3][y-6] = 2;
+        }
+        if(x < copy.length - 4 && y > 5) {
+          copy[x+4][y-6] = 2;
+        }
+        if(x < copy.length - 6 && y > 1) {
+          copy[x+6][y-2] = 2;
+        }
+        if(x < copy.length - 6 && y > 2) {
+          copy[x+6][y-3] = 2;
+        }
+        if(x < copy.length - 6 && y > 3) {
+          copy[x+6][y-4] = 2;
+        }
+
+        if(x < copy.length - 1 && y < copy[0].length - 2) {
+          copy[x+1][y+2] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 3) {
+          copy[x+1][y+3] = 2;
+        }
+        if(x < copy.length - 1 && y < copy[0].length - 4) {
+          copy[x+1][y+4] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 1) {
+          copy[x+2][y+1] = 2;
+        }
+        if(x < copy.length - 3 && y < copy[0].length - 1) {
+          copy[x+3][y+1] = 2;
+        }
+        if(x < copy.length - 4 && y < copy[0].length - 1) {
+          copy[x+4][y+1] = 2;
+        }
+        if(x < copy.length - 2 && y < copy[0].length - 6) {
+          copy[x+2][y+6] = 2;
+        }
+        if(x < copy.length - 3 && y < copy[0].length - 6) {
+          copy[x+3][y+6] = 2;
+        }
+        if(x < copy.length - 4 && y < copy[0].length - 6) {
+          copy[x+4][y+6] = 2;
+        }
+        if(x < copy.length - 6 && y < copy[0].length - 2) {
+          copy[x+6][y+2] = 2;
+        }
+        if(x < copy.length - 6 && y < copy[0].length - 3) {
+          copy[x+6][y+3] = 2;
+        }
+        if(x < copy.length - 6 && y < copy[0].length - 4) {
+          copy[x+6][y+4] = 2;
+        }
+
+        if(x > 0 && y < copy[0].length - 2) {
+          copy[x-1][y+2] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 3) {
+          copy[x-1][y+3] = 2;
+        }
+        if(x > 0 && y < copy[0].length - 4) {
+          copy[x-1][y+4] = 2;
+        }
+        if(x > 1 && y < copy[0].length - 1) {
+          copy[x-2][y+1] = 2;
+        }
+        if(x > 2 && y < copy[0].length - 1) {
+          copy[x-3][y+1] = 2;
+        }
+        if(x > 3 && y < copy[0].length - 1) {
+          copy[x-4][y+1] = 2;
+        }
+        if(x > 1 && y < copy[0].length - 6) {
+          copy[x-2][y+6] = 2;
+        }
+        if(x > 2 && y < copy[0].length - 6) {
+          copy[x-3][y+6] = 2;
+        }
+        if(x > 3 && y < copy[0].length - 6) {
+          copy[x-4][y+6] = 2;
+        }
+        if(x > 5 && y < copy[0].length - 2) {
+          copy[x-6][y+2] = 2;
+        }
+        if(x > 5 && y < copy[0].length - 3) {
+          copy[x-6][y+3] = 2;
+        }
+        if(x > 5 && y < copy[0].length - 4) {
+          copy[x-6][y+4] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'penta-decathlon') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        if(x > 2) {
+          copy[x-3][y] = 2;
+        }
+        if(x > 2 && y > 0) {
+          copy[x-3][y-1] = 2;
+        }
+        if(x > 2 && y > 1) {
+          copy[x-3][y-2] = 2;
+        }
+        if(x > 2 && y < copy[0].length - 1) {
+          copy[x-3][y+1] = 2;
+        }
+        if(x > 2 && y < copy[0].length - 2) {
+          copy[x-3][y+2] = 2;
+        }
+        if(x > 3) {
+          copy[x-4][y] = 2;
+        }
+        if(x > 3 && y > 0) {
+          copy[x-4][y-1] = 2;
+        }
+        if(x > 3 && y < copy[0].length - 1) {
+          copy[x-4][y+1] = 2;
+        }
+        if(x > 4) {
+          copy[x-5][y] = 2;
+        }
+
+        if(x < copy.length - 4) {
+          copy[x+4][y] = 2;
+        }
+        if(x < copy.length - 4 && y > 0) {
+          copy[x+4][y-1] = 2;
+        }
+        if(x < copy.length - 4 && y > 1) {
+          copy[x+4][y-2] = 2;
+        }
+        if(x < copy.length - 4 && y < copy[0].length - 1) {
+          copy[x+4][y+1] = 2;
+        }
+        if(x < copy.length - 4 && y < copy[0].length - 2) {
+          copy[x+4][y+2] = 2;
+        }
+        if(x < copy.length - 5) {
+          copy[x+5][y] = 2;
+        }
+        if(x < copy.length - 5 && y > 0) {
+          copy[x+5][y-1] = 2;
+        }
+        if(x < copy.length - 5 && y < copy[0].length - 1) {
+          copy[x+5][y+1] = 2;
+        }
+        if(x < copy.length - 6) {
+          copy[x+6][y] = 2;
         }
         this.setState({patterngrid: copy});
       }
@@ -248,6 +612,39 @@ class Game extends React.Component {
       }
       else if(command === 'tet4' && this.state.start === 'Start Simulation!') {
         this.setState({pattern: 'tet4'});
+      }
+      else if(command === 'square' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'square'});
+      }
+      else if(command === 'boat' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'boat'});
+      }
+      else if(command === 'loaf' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'loaf'});
+      }
+      else if(command === 'ship' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'ship'});
+      }
+      else if(command === 'beehive' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'beehive'});
+      }
+      else if(command === 'tub' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'tub'});
+      }
+      else if(command === 'blinker' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'blinker'});
+      }
+      else if(command === 'toad' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'toad'});
+      }
+      else if(command === 'beacon' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'beacon'});
+      }
+      else if(command === 'pulsar' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'pulsar'});
+      }
+      else if(command === 'penta-decathlon' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'penta-decathlon'});
       }
     }
     
