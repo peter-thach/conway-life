@@ -21,7 +21,7 @@ class Game extends React.Component {
       variant: 'success',
       speed: 'Normal',
       delay: 750,
-      pattern: '',
+      pattern: null,
       patterngrid: null,
     }
   }
@@ -53,18 +53,110 @@ class Game extends React.Component {
     }
   }
 
+  // START of logic for selected patterns highlighting grid
   onMouseOver(x, y) {
-    if(this.state.pattern === 'tri1') {
-      // JSON.parse allows deep copy of multidimensional array
-      let copy = JSON.parse(JSON.stringify(this.state.squares));
-       copy[x][y] = 2;
-       if(x > 0 && y < copy[0].length - 1) {
-         copy[x-1][y+1] = 2;
-       }
-       if(x < copy.length - 1) {
-         copy[x+1][y] = 2;
-       }
-       this.setState({patterngrid: copy});
+    if(this.state.pattern) {
+      if(this.state.pattern === 'tri1') {
+        // JSON.parse allows deep copy of multidimensional array
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(x > 0 && y < copy[0].length - 1) {
+          copy[x-1][y+1] = 2;
+        }
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'tri2') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(x > 0) {
+          copy[x-1][y] = 2;
+        }
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'tri3') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'tri4') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(x > 0) {
+          copy[x-1][y+1] = 2;
+        }
+        if(x < copy.length - 1 && y > 0) {
+          copy[x+1][y-1] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'tet1') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y < copy[0].length - 1) {
+          copy[x+1][y] = 2;
+        }
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        if(x < copy.length - 2) {
+          copy[x+2][y] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'tet2') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2;
+        }
+        if(y < copy[0].length - 2) {
+          copy[x][y+2] = 2
+        }
+        if(x < copy.length - 1) {
+          copy[x+1][y] = 2;
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'tet3') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(x > 0 && y > 0) {
+          copy[x-1][y-1] = 2;
+        }
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2
+        }
+        if(y < copy[0].length - 2) {
+          copy[x][y+2] = 2
+        }
+        this.setState({patterngrid: copy});
+      }
+      else if(this.state.pattern === 'tet4') {
+        let copy = JSON.parse(JSON.stringify(this.state.squares));
+        copy[x][y] = 2;
+        if(x > 0) {
+          copy[x-1][y] = 2;
+        }
+        if(y < copy[0].length - 1) {
+          copy[x][y+1] = 2
+        }
+        if(y > 0) {
+          copy[x][y-1] = 2
+        }
+        this.setState({patterngrid: copy});
+      }
     }
   }
 
@@ -132,8 +224,31 @@ class Game extends React.Component {
     }
 
     // setting the pattern
-    if(command === 'tri1' && this.state.start === 'Start Simulation!') {
-      this.setState({pattern: 'tri1'});
+    if(this.state.start === 'Start Simulation!') {
+      if(command === 'tri1' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'tri1'});
+      }
+      else if(command === 'tri2' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'tri2'});
+      }
+      else if(command === 'tri3' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'tri3'});
+      }
+      else if(command === 'tri4' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'tri4'});
+      }
+      else if(command === 'tet1' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'tet1'});
+      }
+      else if(command === 'tet2' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'tet2'});
+      }
+      else if(command === 'tet3' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'tet3'});
+      }
+      else if(command === 'tet4' && this.state.start === 'Start Simulation!') {
+        this.setState({pattern: 'tet4'});
+      }
     }
     
   }
