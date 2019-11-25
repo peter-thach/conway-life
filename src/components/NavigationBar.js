@@ -50,26 +50,26 @@ class NavigationBar extends Component {
               </NavDropdown>
             </NavDropdown>
             
-            <Button variant={this.props.variant} onClick={() => this.props.onClick('start')}>
+            <Button variant={this.props.variant} onClick={() => this.props.onClick(null, 'start')}>
               {this.props.start}  
             </Button>
 
             <Nav.Item>
-              <Nav.Link onClick={() => this.props.onClick('randomize')}>
+              <Nav.Link onClick={() => this.props.onClick(null, 'randomize')}>
                 Randomize Grid
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link onClick={() => this.props.onClick('clear')}>
+              <Nav.Link onClick={() => this.props.onClick(null, 'clear')}>
                 Clear Grid
               </Nav.Link>
             </Nav.Item>
 
             <NavDropdown title={"Speed: " + this.props.speed}>
-              <NavDropdown.Item onClick={() => this.props.onClick('Slow')}>Slow</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => this.props.onClick('Normal')}>Normal</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => this.props.onClick('Fast')}>Fast</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => this.props.onClick(null, 'Slow')}>Slow</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => this.props.onClick(null, 'Normal')}>Normal</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => this.props.onClick(null, 'Fast')}>Fast</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
