@@ -23,6 +23,7 @@ class Game extends React.Component {
       variant: 'success',
       speed: 'Normal',
       delay: 750,
+      patterntype: null,
       pattern: null,
       patterngrid: null,
     }
@@ -46,7 +47,7 @@ class Game extends React.Component {
         }
       }
       let temp1 = JSON.parse(JSON.stringify(this.state.patterngrid));
-      this.setState({squares: temp1, pattern: '', patterngrid: null});
+      this.setState({squares: temp1, pattern: '', patterntype: null, patterngrid: null});
     }
     else {
       const squares = this.state.squares.slice();
@@ -60,7 +61,7 @@ class Game extends React.Component {
     selectPattern.call(this, x, y);
   }
 
-  handleClickNav(command) {
+  handleClickNav(patterntype, command) {
     if(command === 'clear') {
       // prevent the board from being cleared during the simulation
       if(this.state.start == 'Stop Simulation') {
@@ -125,6 +126,7 @@ class Game extends React.Component {
 
     // setting the pattern
     else{
+      this.setState({patterntype: patterntype});
       setPattern.call(this, command);
     }
   }
@@ -137,7 +139,7 @@ class Game extends React.Component {
     return (
       <div>
         <NavigationBar 
-          onClick={(command) => this.handleClickNav(command)}
+          onClick={(patterntype, command) => this.handleClickNav(patterntype, command)}
           start={this.state.start}
           variant={this.state.variant}
           speed={this.state.speed}
