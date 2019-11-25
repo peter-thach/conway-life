@@ -5,12 +5,12 @@ class Legend extends Component {
   render() {
     return (
       <div id="legend-wrapper">
-        <div id="text">
+        <span id="text">
           <td id="alive"></td> Alive
-        </div>
-        <div id="text">
+        </span>
+        <span id="text">
           <td id="dead"></td> Dead
-        </div>
+        </span>
       </div>
     )
   }

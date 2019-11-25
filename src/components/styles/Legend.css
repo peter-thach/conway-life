@@ -1,6 +1,12 @@
 #legend-wrapper {
   display: inline-block;
   margin: 25px;
+  margin-left: 0px;
+  padding: 20px;
+}
+
+span {
+  margin: 20px;
 }
 
 #alive {
@@ -23,4 +29,5 @@
 
 #text {
   position: relative;
+  font-weight: 600;
 }

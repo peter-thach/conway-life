@@ -10,7 +10,7 @@ class NavigationBar extends Component {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse>
           <Nav>
-            <NavDropdown title={<span className="nav-title-text">Patterns</span>} className="nav-title">
+            <NavDropdown title="Patterns" className="nav-title">
               <NavDropdown title="Triominos" drop="right">
                 <NavDropdown.Item onClick={() => this.props.onClick('tri', 'tri1')}>1</NavDropdown.Item>
                 <NavDropdown.Item onClick={() => this.props.onClick('tri', 'tri2')}>2</NavDropdown.Item>
@@ -57,21 +57,28 @@ class NavigationBar extends Component {
 
             <Nav.Item className="nav-title">
               <Nav.Link onClick={() => this.props.onClick(null, 'randomize')}>
-                <span className="nav-title-text">Randomize Grid</span>
+                Randomize Grid
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item className="nav-title">
               <Nav.Link onClick={() => this.props.onClick(null, 'clear')}>
-              <span className="nav-title-text">Clear Grid</span>
+                Clear Grid
               </Nav.Link>
             </Nav.Item>
 
-            <NavDropdown title={<span className="nav-title-text">Speed: {this.props.speed}</span>} className="nav-title">
+            <NavDropdown title={"Speed: " + this.props.speed} className="nav-title">
               <NavDropdown.Item onClick={() => this.props.onClick(null, 'Slow')}>Slow</NavDropdown.Item>
               <NavDropdown.Item onClick={() => this.props.onClick(null, 'Normal')}>Normal</NavDropdown.Item>
               <NavDropdown.Item onClick={() => this.props.onClick(null, 'Fast')}>Fast</NavDropdown.Item>
             </NavDropdown>
+
+            <Nav.Link href="https://github.com/peter-thach">
+              <i className="icon fa fa-github fa-2x mr-sm-2"></i>
+            </Nav.Link>
+            <Nav.Link href="https://www.linkedin.com/in/peter-thach/">
+              <i className="icon fa fa-linkedin fa-2x mr-sm-2"></i>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
