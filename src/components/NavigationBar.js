@@ -9,7 +9,7 @@ class NavigationBar extends Component {
         <Navbar.Brand href=".">Conway's Game of Life</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse>
-          <Nav>
+          <Nav className="w-100">
             <NavDropdown title="Patterns" className="nav-title">
               <NavDropdown title="Triominos" drop="right">
                 <NavDropdown.Item onClick={() => this.props.onClick('tri', 'tri1')}>1</NavDropdown.Item>
@@ -73,12 +73,14 @@ class NavigationBar extends Component {
               <NavDropdown.Item onClick={() => this.props.onClick(null, 'Fast')}>Fast</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link href="https://github.com/peter-thach">
-              <i className="icon fa fa-github fa-2x mr-sm-2"></i>
-            </Nav.Link>
-            <Nav.Link href="https://www.linkedin.com/in/peter-thach/">
-              <i className="icon fa fa-linkedin fa-2x mr-sm-2"></i>
-            </Nav.Link>
+            <Nav.Item className="ml-auto">
+              <Nav.Link href="https://github.com/peter-thach" className="socials-icon">
+                <i className="icon fa fa-github fa-lg mr-sm-2"></i>
+              </Nav.Link>
+              <Nav.Link href="https://www.linkedin.com/in/peter-thach/" className="socials-icon">
+                <i className="icon fa fa-linkedin fa-lg mr-sm-2"></i>
+              </Nav.Link>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

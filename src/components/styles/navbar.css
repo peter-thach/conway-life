@@ -42,24 +42,7 @@
     font-weight: 600;
 }
 
-ul {
-    margin: 0px;
-    padding-right: 0px;
-}
 
-ul li {
-    display: inline;
-    margin: 0px 10px 0px 10px;
-}
-
-ul li a {
-    color: white;
-}
-
-ul li a:hover {
-    color: limegreen;
-}
-
-ul li a:after {
-    color: white;
+.socials-icon {
+    display: inline-block;
 }
