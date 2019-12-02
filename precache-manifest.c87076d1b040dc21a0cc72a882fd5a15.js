@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b1fa7cb2453c4d3ff11d189bb7289055",
+    "revision": "76e079e5c0c9b3f256ab978243d86f5f",
     "url": "/conway-life/index.html"
   },
   {
