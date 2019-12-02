@@ -238,7 +238,7 @@ export function selectPattern(x, y) {
           }
         }
         else if(this.state.patterntype === 'osc') {
-          if(this.state.pattern === 'pulsar') {
+          if(this.state.pattern === 'blinker') {
             let copy = JSON.parse(JSON.stringify(this.state.squares));
             copy[x][y] = 2;
             if(x > 0) {
@@ -246,6 +246,26 @@ export function selectPattern(x, y) {
             }
             if(x < copy.length - 1) {
               copy[x+1][y] = 2;
+            }
+            this.setState({patterngrid: copy});
+          }
+          else if(this.state.pattern === 'toad') {
+            let copy = JSON.parse(JSON.stringify(this.state.squares));
+            copy[x][y] = 2;
+            if(x < copy.length - 1 && y > 0) {
+              copy[x+1][y-1] = 2;
+            }
+            if(x < copy.length - 1) {
+              copy[x+1][y] = 2;
+            }
+            if(x < copy.length - 1 && y < copy[0].length - 1) {
+              copy[x+1][y+1] = 2;
+            }
+            if(y < copy[0].length - 1) {
+              copy[x][y+1] = 2;
+            }
+            if(y < copy[0].length - 2) {
+              copy[x][y+2] = 2;
             }
             this.setState({patterngrid: copy});
           }
