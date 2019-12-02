@@ -74,10 +74,10 @@ class NavigationBar extends Component {
             </NavDropdown>
 
             <Nav.Item className="ml-auto">
-              <Nav.Link href="https://github.com/peter-thach" className="socials-icon">
+              <Nav.Link target="_blank" href="https://github.com/peter-thach" className="socials-icon">
                 <i className="icon fa fa-github fa-lg mr-sm-2"></i>
               </Nav.Link>
-              <Nav.Link href="https://www.linkedin.com/in/peter-thach/" className="socials-icon">
+              <Nav.Link target="_blank" href="https://www.linkedin.com/in/peter-thach/" className="socials-icon">
                 <i className="icon fa fa-linkedin fa-lg mr-sm-2"></i>
               </Nav.Link>
             </Nav.Item>
