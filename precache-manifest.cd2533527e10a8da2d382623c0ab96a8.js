@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "61961510e90790dba5fe710c73036373",
+    "revision": "9dc18ecd72503be834fe6265d842803b",
     "url": "/conway-life/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/conway-life/static/css/2.b0bb7f2c.chunk.css"
   },
   {
-    "revision": "d8005acc8f26682fdc8e",
+    "revision": "63778f45261d7503ed4a",
     "url": "/conway-life/static/css/main.c9796a34.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/conway-life/static/js/2.168cacfc.chunk.js"
   },
   {
-    "revision": "d8005acc8f26682fdc8e",
-    "url": "/conway-life/static/js/main.b884a827.chunk.js"
+    "revision": "63778f45261d7503ed4a",
+    "url": "/conway-life/static/js/main.d307d4ca.chunk.js"
   },
   {
     "revision": "403556ac4bc8cdec0108",
